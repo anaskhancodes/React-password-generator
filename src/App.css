@@ -1,0 +1,122 @@
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, rgb(75, 255, 129), rgb(166, 229, 185));
+}
+
+.generator {
+  background-color: rgb(40, 197, 87);
+  padding: 16px;
+  margin-top: 16px;
+  color: white;
+  box-shadow: 0px 0px 20px 6px #3d8d2b;
+  border: 1px solid rgb(30, 121, 57);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.generator h2 {
+  /* padding-top: -30px; */
+  padding-left: 60px;
+  padding-right: 20px;
+}
+
+.generate-password-div {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 10px;
+  color: white;
+  height: 35px;
+  width: 330px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 5px;
+  color: black;
+}
+
+.btn-copy {
+  position: absolute;
+  /* background-color: rgb(248, 148, 16); */
+  background-color: rgb(40, 197, 87);
+  color: white;
+  border: none;
+  height: 43px;
+  padding: 12px;
+  cursor: pointer;
+  top: 6px;
+  left: 310px;
+}
+
+.btn-copy:hover {
+  color: rgb(13, 107, 41);
+  background-color: rgb(32, 228, 90);
+}
+
+.form {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  /* border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  margin-top: 16px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.generate-password {
+  padding: 13px;
+  margin-left: 103px;
+  margin-top: 20px;
+  background-color: #3d8d2b;
+  color: white;
+  border: none;
+  box-shadow: 0 0px 5px #28581d;
+  cursor: pointer;
+}
+
+.generate-password:active {
+  box-shadow: none;
+  transform: translatez(5px);
+}
+
+input {
+  cursor: pointer;
+}
+
+/* input .password{
+  width: 40px;
+} */
+
+@media only screen and (max-width: 375px){
+  .generate-password-div{
+    width: 231px;
+  }
+
+  .btn-copy{
+    left: 208px;
+  }
+
+  .generator h2{
+    font-size: 18px;
+    margin-left: -23px;
+  }
+
+  .generator{
+    width: 255px;
+  }
+
+  .generate-password{
+    margin-left: 57px;
+  }
+
+  h3{
+    font-size: 19px;
+  }
+}
