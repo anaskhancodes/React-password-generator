@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import React from 'react';
 import './App.css'
+import { ToastContainer, } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { copySuccessFully } from './messages';
 import { uppercaseLetters, lowercaseLetters, num, speachalCharacters } from './characters';
 
 function App() {
@@ -14,6 +18,10 @@ function App() {
 
   const handleGeneratePassword = (e) => {
     let charactersList = ""
+
+    if(!uppercase && !lowercase && !numbers && !symbols){
+      notify("You must Select at last one option", true)
+    }
 
     if (uppercase) {
       charactersList = charactersList + uppercaseLetters;
@@ -38,9 +46,9 @@ function App() {
     let password = '';
     const charactersListLength = charactersList.length;
 
-    for (let i = 0; i < passwordLength; i++){
+    for (let i = 0; i < passwordLength; i++) {
       const charactersIndex = Math.round(Math.random() * charactersListLength);
-      
+
       password = password + charactersList.charAt(charactersIndex)
     }
 
@@ -48,17 +56,49 @@ function App() {
   }
 
   const copyPassword = () => {
-    const newTextArea =document.createElement("textarea")
+    const newTextArea = document.createElement("textarea")
     newTextArea.innerText = password
     document.body.appendChild(newTextArea)
     newTextArea.select()
     document.execCommand("copy")
     newTextArea.remove()
   }
+  const notify = (message, haseError = false)  => {
+
+    if(haseError){
+      toast.error(message, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }else{
+      toast(message, {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  }
 
   const handleCopyBtn = (e) => {
-    copyPassword()
+    if(password === ""){
+      notify("Noting to copy", true)
+    }else{
+      copyPassword()
+      notify(copySuccessFully)
+    }
   }
+
 
 
 
@@ -128,6 +168,19 @@ function App() {
           </div>
 
           <button onClick={handleGeneratePassword} className='generate-password'> Generate Password</button>
+
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </div>
       </div>
     </div>

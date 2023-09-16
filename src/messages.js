@@ -1,0 +1,1 @@
+export const copySuccessFully = "Password Successfully copid"
