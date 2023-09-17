@@ -1,16 +1,16 @@
 body {
   display: flex;
   justify-content: center;
-  background: linear-gradient(90deg, rgb(75, 255, 129), rgb(166, 229, 185));
+  background: linear-gradient(180deg, rgb(41, 103, 161),rgb(48, 112, 116));
 }
 
 .generator {
-  background-color: rgb(40, 197, 87);
+  background-color: rgb(22, 194, 247);
   padding: 16px;
   margin-top: 16px;
   color: white;
-  box-shadow: 0px 0px 20px 6px #3d8d2b;
-  border: 1px solid rgb(30, 121, 57);
+  box-shadow: 0px 0px 20px 6px rgb(0 36 47);
+  border: 1px solid rgb(0, 46, 59);
 }
 
 h1 {
@@ -42,7 +42,7 @@ h3 {
 .btn-copy {
   position: absolute;
   /* background-color: rgb(248, 148, 16); */
-  background-color: rgb(40, 197, 87);
+  background-color: rgb(23, 76, 92);
   color: white;
   border: none;
   height: 43px;
@@ -53,8 +53,8 @@ h3 {
 }
 
 .btn-copy:hover {
-  color: rgb(13, 107, 41);
-  background-color: rgb(32, 228, 90);
+  color: rgb(255, 255, 255);
+  background-color: rgb(27, 164, 206);
 }
 
 .form {
@@ -74,10 +74,10 @@ h3 {
   padding: 13px;
   margin-left: 103px;
   margin-top: 20px;
-  background-color: #3d8d2b;
+  background-color: rgb(23, 76, 92);
   color: white;
   border: none;
-  box-shadow: 0 0px 5px #28581d;
+  box-shadow: 0 0px 5px rgb(6, 59, 75);
   cursor: pointer;
 }
 
@@ -96,11 +96,12 @@ input {
 
 @media only screen and (max-width: 375px){
   .generate-password-div{
-    width: 231px;
+    width: 249px;
+    margin-left: -7px;
   }
 
   .btn-copy{
-    left: 208px;
+    left: 227px;
   }
 
   .generator h2{
@@ -110,6 +111,7 @@ input {
 
   .generator{
     width: 255px;
+    margin-top: 30px;
   }
 
   .generate-password{
@@ -117,6 +119,6 @@ input {
   }
 
   h3{
-    font-size: 19px;
+    font-size: 16px;
   }
 }
